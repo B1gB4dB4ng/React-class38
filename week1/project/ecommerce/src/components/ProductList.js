@@ -10,7 +10,7 @@ export default function ProductList() {
 
   const selectCategory = (e) => {
     const buttonText = e.target.innerText;
-    const categoryName = buttonText.slice(6);
+    const categoryName = buttonText;
     setCategory(categoryName);
     setSelected(e.target.id);
   };

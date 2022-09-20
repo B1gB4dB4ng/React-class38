@@ -7,7 +7,7 @@ export default function CategoryButton({ id, text, eventHandler, selected }) {
       onClick={eventHandler}
       className={selected === id.toString() ? "button-active" : undefined}
     >
-      {text}
+      {text.slice(5)}
     </button>
   );
 }
