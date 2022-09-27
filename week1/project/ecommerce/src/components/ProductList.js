@@ -10,8 +10,8 @@ export default function ProductList() {
 
   const selectCategory = (e) => {
     const buttonText = e.target.innerText;
-    const categoryName = buttonText;
-    setCategory(categoryName);
+
+    setCategory(buttonText);
     setSelected(e.target.id);
   };
 
@@ -19,12 +19,13 @@ export default function ProductList() {
     <div>
       <h1>Products</h1>
       <div className="categoryButton">
-        {categories.map((el, index) => (
+        {categories.map((el, id) => (
           <CategoryButton
-            id={index}
+            id={id}
             text={el}
             eventHandler={selectCategory}
             selected={selected}
+            key={id.toString()}
           />
         ))}
       </div>
@@ -33,7 +34,7 @@ export default function ProductList() {
         {products
           .filter((product) => product.category === category)
           .map((product) => (
-            <ProductCard value={product} />
+            <ProductCard key={product.id} value={product} />
           ))}
       </div>
     </div>

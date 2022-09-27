@@ -6,8 +6,9 @@ export default function CategoryButton({ id, text, eventHandler, selected }) {
       id={id}
       onClick={eventHandler}
       className={selected === id.toString() ? "button-active" : undefined}
+      key={id.toString()}
     >
-      {text.slice(5)}
+      {text.replace("FAKE:", "")}
     </button>
   );
 }
