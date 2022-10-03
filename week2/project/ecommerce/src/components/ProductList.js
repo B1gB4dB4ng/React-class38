@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import Error from "./Error.js";
 import ProductCard from "./ProductCard.js";
 import CategoryButton from "./Button.js";
 import { Link } from "react-router-dom";
@@ -9,6 +9,7 @@ export default function ProductList() {
   const [category, setCategory] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selected, setSelected] = useState("");
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -20,7 +21,8 @@ export default function ProductList() {
         setCategory(data);
         setLoading(false);
       } catch (err) {
-        console.log(err);
+        setLoading(false);
+        setError(true);
       }
     })();
   }, []);
@@ -37,7 +39,8 @@ export default function ProductList() {
         setProducts(Data);
         setLoading(false);
       } catch (err) {
-        console.log(err.message);
+        setLoading(false);
+        setError(true);
       }
     })();
   }, [selected]);
@@ -46,16 +49,19 @@ export default function ProductList() {
     <div>
       <h2>Loading...</h2>
     </div>
+  ) : error ? (
+    <Error />
   ) : (
     <div>
       <h1>Products</h1>
       <div className="categoryButton">
         {category.map((el, id) => (
           <CategoryButton
-            key={id}
+            key={el}
             category={el}
             selected={selected}
             setSelected={setSelected}
+            id={id}
           />
         ))}
       </div>

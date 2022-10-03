@@ -8,7 +8,7 @@ export default function CategoryButton({ category, selected, setSelected }) {
     <div className="product-filter">
       <button
         onClick={handleOnClick}
-        className={selected === category ? "button-active" : undefined}
+        className={selected === category && "button-active"}
       >
         {category}
       </button>

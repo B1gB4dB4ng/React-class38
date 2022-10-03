@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 
 export default function ProductDetail() {
   const [product, setProduct] = useState("");
-  let params = useParams();
+  const params = useParams();
   useEffect(() => {
     (async () => {
       try {
@@ -19,7 +19,7 @@ export default function ProductDetail() {
   }, [params.productId]);
   return (
     <div className="product-detail">
-      <img src={product?.image} alt={product.description} />
+      <img src={product.image} alt={product.description} />
       <h3>{product.title}</h3>
       <p>{product.description}</p>
       <p>
