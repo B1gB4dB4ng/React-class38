@@ -7,12 +7,19 @@ import CategoryButton from "./Button.js";
 export default function ProductList() {
   const [category, setCategory] = useState("");
   const [selected, setSelected] = useState(null);
+  const [createProduct, setCreateProduct] = useState([]);
 
   const selectCategory = (e) => {
     const buttonText = e.target.innerText;
 
     setCategory(buttonText);
     setSelected(e.target.id);
+    setCreateProduct(
+      products
+        .filter((product) => product.category === category)
+
+        .map((product) => <ProductCard key={product.id} value={product} />)
+    );
   };
 
   return (
@@ -21,22 +28,16 @@ export default function ProductList() {
       <div className="categoryButton">
         {categories.map((el, id) => (
           <CategoryButton
+            key={id}
             id={id}
             text={el}
             eventHandler={selectCategory}
             selected={selected}
-            key={id.toString()}
           />
         ))}
       </div>
 
-      <div className="product-list">
-        {products
-          .filter((product) => product.category === category)
-          .map((product) => (
-            <ProductCard key={product.id} value={product} />
-          ))}
-      </div>
+      <div className="product-list">{createProduct}</div>
     </div>
   );
 }
