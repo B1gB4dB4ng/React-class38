@@ -1,0 +1,232 @@
+.App {
+  text-align: center;
+}
+.Navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 200px;
+  margin: auto;
+  background-color: black;
+  height: 35px;
+  border-radius: 8px;
+}
+.header {
+  float: right;
+}
+.Navbardiv {
+  width: 60%;
+  margin: auto;
+}
+.Navbar p {
+  margin: auto;
+  margin-top: 10px;
+  color: aliceblue;
+}
+.categoryButton {
+  display: flex;
+  flex-wrap: wrap;
+}
+.product-filter {
+  margin: auto;
+}
+button {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  height: 40px;
+  min-width: 200px;
+  padding: 5px;
+  margin: auto;
+  cursor: pointer;
+}
+.button-active {
+  background-color: white;
+  color: black;
+  border: 3px solid black;
+}
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  margin: 25px;
+}
+.productBox {
+  width: 30%;
+  margin: auto;
+  position: relative;
+  height: 500px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+}
+.heart-icon {
+  width: 50px;
+  height: 50px;
+  transition: width 0.5s, height 0.5s;
+}
+.heart :hover {
+  width: 60px;
+  height: 60px;
+}
+.product-detail p {
+  margin: 100px;
+}
+.product-detail img {
+  max-width: 250px;
+}
+.fav-products {
+  display: flex;
+  flex-wrap: wrap;
+}
+.favErrorText {
+  margin: auto;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+a :hover {
+  text-decoration: underline;
+}
+.cards {
+  width: 80%;
+  margin: auto;
+  display: block;
+}
+
+.card-img {
+  width: 200px;
+  margin: auto;
+  transition: width 0.5s;
+}
+.card-img:hover {
+  width: 240px;
+}
+.heart {
+  max-width: 60px;
+  max-height: 60px;
+  margin: auto;
+  position: absolute;
+  right: 5%;
+  top: 5%;
+}
+.fav-products {
+  display: flex;
+  flex-wrap: wrap;
+}
+.fav-box {
+  width: 20%;
+  position: relative;
+  margin: auto;
+}
+.fav-box .heart {
+  position: absolute;
+}
+@media (min-width: 1024px) {
+  .productBox {
+    width: 30%;
+    margin: auto;
+    position: relative;
+  }
+  .heart {
+    max-width: 60px;
+    max-height: 60px;
+    margin: auto;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+  }
+  .fav-box {
+    width: 40%;
+    position: relative;
+    margin: auto;
+  }
+  .fav-box .heart {
+    position: absolute;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 1023px) {
+  .cards {
+    width: 45%;
+    margin-left: 0;
+    display: block;
+  }
+
+  .heart-icon {
+    margin: auto;
+    width: 50px;
+    height: 50px;
+  }
+  .productBox {
+    width: 40%;
+    margin: auto;
+  }
+  .heart {
+    max-width: 60px;
+    max-height: 60px;
+    margin: auto;
+    position: absolute;
+    right: 0%;
+    top: 0%;
+  }
+  .heart-icon {
+    width: 35px;
+    height: 35px;
+  }
+  .fav-box {
+    width: 50%;
+    position: relative;
+    margin: auto;
+  }
+  .fav-box .heart {
+    position: absolute;
+  }
+}
+@media (max-width: 500px) {
+  .cards {
+    width: 55%;
+    margin-left: 0;
+    display: block;
+  }
+  .product-detail p {
+    margin: 5px;
+  }
+  .heart-icon {
+    width: 45px;
+    height: 45px;
+    margin: auto;
+  }
+  .productBox {
+    width: 70%;
+    margin: auto;
+    position: relative;
+  }
+  .heart {
+    max-width: 60px;
+    max-height: 60px;
+    margin: auto;
+    position: absolute;
+    bottom: 5%;
+  }
+  .heart-icon {
+    width: 25px;
+    height: 25px;
+  }
+  .fav-box {
+    width: 100%;
+    position: relative;
+    margin: auto;
+  }
+  .fav-box .heart {
+    position: absolute;
+    bottom: 0;
+  }
+  .Navbardiv {
+    width: 50%;
+    margin: auto;
+  }
+}
