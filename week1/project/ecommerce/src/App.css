@@ -15,6 +15,10 @@ button {
   margin: auto;
   cursor: pointer;
 }
+button:focus {
+  background-color: white;
+  color: black;
+}
 .button-active {
   background-color: white;
   color: black;
