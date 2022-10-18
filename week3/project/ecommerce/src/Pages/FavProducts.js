@@ -1,18 +1,18 @@
 import React, { useContext } from "react";
 
-import ProductCard from "../components/ProductCard";
+import ProductCard from "../Components/ProductCard";
 
-import { FavContext } from "./FavContext";
+import { FavContext } from "../Context/FavContext";
 
 export const FavProducts = () => {
-  const { favArray } = useContext(FavContext);
+  const { favorites } = useContext(FavContext);
 
   return (
     <>
       <h1>Fav Products</h1>
       <div className="fav-products">
-        {favArray.length > 0 ? (
-          favArray.map((product) => (
+        {favorites.length > 0 ? (
+          favorites.map((product) => (
             <div className="fav-box">
               <ProductCard product={product} key={product.id} />
             </div>

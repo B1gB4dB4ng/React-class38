@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Error from "./Error.js";
-import ProductCard from "./ProductCard.js";
-import CategoryButton from "./Button.js";
-import Loading from "./Loading.js";
-import { useFetch } from "./useFetch.js";
+import Error from "../Components/Error.js";
+import ProductCard from "../Components/ProductCard.js";
+import CategoryButton from "../Components/CategoryButton.js";
+import Loading from "../Components/Loading.js";
+import { useFetch } from "../Hooks/useFetch.js";
 
 export default function ProductList() {
   const [selected, setSelected] = useState("");

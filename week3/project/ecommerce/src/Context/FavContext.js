@@ -3,17 +3,17 @@ import React, { useState, createContext } from "react";
 export const FavContext = createContext();
 
 export function FavProvider({ children }) {
-  const [favArray, setFavArray] = useState([]);
+  const [favorites, setFavorites] = useState([]);
 
   const addFav = (product) => {
-    setFavArray([...favArray, product]);
+    setFavorites([...favorites, product]);
   };
   const kickFav = (id) => {
-    setFavArray(favArray.filter((product) => product.id !== id));
+    setFavorites(favorites.filter((product) => product.id !== id));
   };
 
   return (
-    <FavContext.Provider value={{ favArray, addFav, kickFav }}>
+    <FavContext.Provider value={{ favorites, addFav, kickFav }}>
       {children}
     </FavContext.Provider>
   );

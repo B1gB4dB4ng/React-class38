@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Favicon from "../Fav/Favicon";
+import LikeIcon from "./LikeIcon";
 
 export default function ProductCard({ product }) {
   return (
@@ -15,7 +15,7 @@ export default function ProductCard({ product }) {
           <h3>{product.title}</h3>
         </div>
       </Link>
-      <Favicon product={product} />
+      <LikeIcon product={product} />
     </div>
   );
 }

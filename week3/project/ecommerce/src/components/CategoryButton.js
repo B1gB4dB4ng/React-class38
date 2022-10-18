@@ -2,8 +2,13 @@ import React from "react";
 
 export default function CategoryButton({ category, selected, setSelected }) {
   const handleOnClick = () => {
-    setSelected(category);
+    if (selected === category) {
+      setSelected("");
+    } else {
+      setSelected(category);
+    }
   };
+
   return (
     <div className="product-filter">
       <button

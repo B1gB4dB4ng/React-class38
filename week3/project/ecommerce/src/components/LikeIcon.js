@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
-import { FavContext } from "./FavContext";
+import { FavContext } from "../Context/FavContext";
 import heart1 from "./../img/heart1.png";
 import heart2 from "./../img/heart2.png";
 
-export default function Favicon({ product }) {
-  const { favArray, addFav, kickFav } = useContext(FavContext);
+export default function LikeIcon({ product }) {
+  const { favorites, addFav, kickFav } = useContext(FavContext);
   const isItFav = (id) => {
-    const result = favArray.some((product) => product.id === id);
+    const result = favorites.some((product) => product.id === id);
     return result;
   };
 

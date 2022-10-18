@@ -1,11 +1,11 @@
 import React from "react";
-import ProductList from "./components/ProductList.js";
+import ProductList from "./Pages/ProductList.js";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import ProductDetail from "./components/ProductDetails.js";
-import Nav from "./components/Nav.js";
-import { FavProvider } from "./Fav/FavContext.js";
-import { FavProducts } from "./Fav/FavProducts.js";
+import ProductDetail from "./Pages/ProductDetails.js";
+import Nav from "./Components/Nav.js";
+import { FavProvider } from "../src/Context/FavContext.js";
+import { FavProducts } from "./Pages/FavProducts.js";
 
 function App() {
   return (
